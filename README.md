@@ -1,0 +1,1 @@
+Payroll management system built with ASP.NET Core 8, React with Vite and Microsoft SQL Server.
