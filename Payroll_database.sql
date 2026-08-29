@@ -29,8 +29,8 @@ go
 
 create table empleado(
 idEmpleado int primary key identity(1,1),
-primerNombre, 
-apellidoPaterno, 
-numeroSeguroSocial, 
-salarioSemanal.
+primerNombre varchar(40), 
+apellidoPaterno varchar(40), 
+numeroSeguroSocial int, 
+salarioSemanal decimal
 )
