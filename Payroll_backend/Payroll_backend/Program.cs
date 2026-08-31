@@ -2,8 +2,13 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Payroll_backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// 1. Configurar Autenticación JWT
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var secretKey = jwtSettings["SecretKey"]!;
 
 // Add services to the container.
 
@@ -36,15 +41,22 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["AuthConfiguration:Issuer"],
-        ValidAudience = builder.Configuration["AuthConfiguration:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["AuthConfiguration:Key"]!))
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
     };
 });
 
-app.UseAuthentication();
-app.UseAuthorization();
+builder.Services.AddAuthorization();
+builder.Services.AddScoped<IServicioJwt, ServicioJwt>();
+
+var app = builder.Build();
+
+// 2. Middleware (El orden es fundamental)
+app.UseRouting();
+
+app.UseAuthentication(); // <-- Primero Autenticación
+app.UseAuthorization();  // <-- Luego Autorización
 
 app.MapControllers();
 

@@ -15,3 +15,8 @@ Aplicación web modular para el cálculo de pagos semanales, gestión de emplead
 1. Navegar a la carpeta backend:
    ```bash
    cd backend/Nomina.API
+
+   Add this to payroll_backend/appsetting.json
+   "ConnectionStrings": {
+    "DefaultConnection": "Server=[server_name];Database=payroll_management_system;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
