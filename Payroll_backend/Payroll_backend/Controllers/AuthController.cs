@@ -45,4 +45,24 @@ namespace Payroll_backend.Controllers
 
             return Unauthorized(new { mensaje = "Credenciales inválidas" });
         }
+
+        [HttpPost("refresh")]
+        public IActionResult Refresh([FromBody] SolicitudRefreshDto dto)
+        {
+            var principal = _servicioJwt.ObtenerPrincipalDeTokenExpirado(dto.TokenExpirado);
+            if (principal == null) return BadRequest("Token inválido");
+
+            var usuarioId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var nombreUsuario = principal.FindFirst(ClaimTypes.Name)?.Value;
+            var rol = principal.FindFirst(ClaimTypes.Role)?.Value;
+
+            // Validar el RefreshToken almacenado en base de datos aquí...
+
+            var nuevoJwt = _servicioJwt.GenerarToken(usuarioId!, nombreUsuario!, rol!);
+            var nuevoRefreshToken = _servicioJwt.GenerarRefreshToken();
+
+            return Ok(new { token = nuevoJwt, refreshToken = nuevoRefreshToken });
+        }
     }
+
+}

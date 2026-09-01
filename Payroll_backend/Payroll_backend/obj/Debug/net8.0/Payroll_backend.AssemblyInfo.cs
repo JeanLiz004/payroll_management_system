@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Payroll_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d25953d59daae5d3c8ab1c7c72ae94415d28603")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62a2bffe9339519d2e3f1f82dad632ea607429a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Payroll_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Payroll_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
