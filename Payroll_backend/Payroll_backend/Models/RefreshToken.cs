@@ -4,8 +4,11 @@
     {
         public int Id { get; set; }
         public string Token { get; set; } = string.Empty;
-        public string UsuarioId { get; set; } = string.Empty;
         public DateTime FechaExpiracion { get; set; }
         public bool EstaRevocado { get; set; }
+
+        // Debe coincidir con el tipo de dato de Usuario.Id (int)
+        public int UsuarioId { get; set; }
+        public Usuario? Usuario { get; set; }
     }
 }
