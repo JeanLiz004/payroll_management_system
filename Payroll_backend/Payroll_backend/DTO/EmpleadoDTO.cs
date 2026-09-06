@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Payroll_backend.DTO
 {
-  
+
 
     public class CrearEmpleadoDto
     {
@@ -13,7 +13,7 @@ namespace Payroll_backend.DTO
         public string Departamento { get; set; } = string.Empty;
         public TipoEmpleado Tipo { get; set; }
 
-        // Parámetros condicionales
+        // Campos específicos opcionales para las subclases
         public decimal? SalarioSemanal { get; set; }
         public decimal? TarifaPorHora { get; set; }
         public double? HorasTrabajadas { get; set; }

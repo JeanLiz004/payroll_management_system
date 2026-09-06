@@ -6,6 +6,8 @@ using Payroll_backend.Services;
 using Payroll_backend.Models;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Payroll_backend.Interface;     // O el namespace donde tengas IRepositorioEmpleado
+using Payroll_backend.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+// Definición de nombre de política CORS
+var corsPolicyName = "AllowReactApp";
+
+// Configuración de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicyName, policy =>
+    {
+        policy.WithOrigins("http://localhost:5173") // Dirección de tu cliente React Vite
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 
 // Configuración de Swagger con soporte para Bearer JWT Token
 builder.Services.AddSwaggerGen(c =>
@@ -76,6 +93,8 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 // Registro de Servicios Inyectados
 builder.Services.AddScoped<IServicioJwt, ServicioJwt>();
+builder.Services.AddScoped<IRepositorioEmpleado, RepositorioEmpleado>();
+builder.Services.AddScoped<IServicioNomina, ServicioNomina>();
 
 var app = builder.Build();
 
@@ -90,6 +109,10 @@ app.UseHttpsRedirection();
 
 // 2. Middleware (El orden es fundamental)
 app.UseRouting();
+
+// Habilitar CORS (Debe ir entre UseRouting y UseAuthentication/UseAuthorization)
+app.UseCors(corsPolicyName);
+
 app.UseAuthentication(); // <-- Primero Autenticación
 app.UseAuthorization();  // <-- Luego Autorización
 

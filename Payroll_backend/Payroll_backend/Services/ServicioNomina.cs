@@ -4,10 +4,7 @@ using Microsoft.Extensions.Logging;
 using Payroll_backend.Interface;
 
 namespace Payroll_backend.Services
-{
- 
-
-   
+{ 
 
     public interface IServicioNomina
     {
