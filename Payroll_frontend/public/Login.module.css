@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
+
+.page {
+  --ink: #10192b;
+  --ink-soft: #1b2740;
+  --paper: #f6f4ef;
+  --gold: #c9a15a;
+  --gold-soft: #e4d3ab;
+  --slate: #5b6577;
+  --slate-dark: #232b3a;
+  --danger: #b3432f;
+  --danger-bg: #fbeae6;
+  --radius: 10px;
+
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--paper);
+}
+
+/* ---------- Brand panel ---------- */
+
+.brandPanel {
+  position: relative;
+  flex: 0 0 44%;
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 56px 0;
+}
+
+.brandTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandMark {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--gold-soft);
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: #eef0f4;
+  letter-spacing: 0.01em;
+}
+
+.brandCopy {
+  max-width: 380px;
+  margin: 64px 0 0;
+}
+
+.brandHeadline {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.22;
+  color: #f4f2ec;
+  margin: 0 0 18px;
+}
+
+.brandSub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #aab2c4;
+  margin: 0;
+}
+
+/* Ledger illustration */
+.ledger {
+  position: relative;
+  height: 220px;
+  margin-top: 40px;
+}
+
+.ledgerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(201, 161, 90, 0.16);
+  font-size: 12.5px;
+  color: #7c8598;
+}
+
+.ledgerRow span:first-child {
+  color: #9aa3b5;
+}
+
+.ledgerRow span:last-child {
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-soft);
+}
+
+.ledgerFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(27, 39, 64, 0) 0%, var(--ink-soft) 95%);
+}
+
+/* ---------- Form panel ---------- */
+
+.formPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 360px;
+}
+
+.formHeading {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--slate-dark);
+  margin: 0 0 8px;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.5;
+  margin: 0 0 32px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate-dark);
+  margin-bottom: 7px;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 13px;
+  color: #9aa1b0;
+  pointer-events: none;
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  border: 1.5px solid #dfdcd2;
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--slate-dark);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: #b7bcc7;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ink-soft);
+  box-shadow: 0 0 0 3px rgba(27, 39, 64, 0.1);
+}
+
+.input:disabled {
+  background: #f4f3ef;
+  cursor: not-allowed;
+}
+
+.toggleVisibility {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 6px;
+  display: flex;
+  color: #9aa1b0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.toggleVisibility:hover {
+  color: var(--slate-dark);
+  background: #f4f3ef;
+}
+
+.toggleVisibility:focus-visible,
+.input:focus-visible,
+.submitBtn:focus-visible,
+.checkboxLabel:focus-within {
+  outline: 2px solid var(--ink-soft);
+  outline-offset: 2px;
+}
+
+.rowBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--slate);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxLabel input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.alert {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--danger-bg);
+  border-left: 3px solid var(--danger);
+  border-radius: 6px;
+  padding: 11px 13px;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+  color: #8a3524;
+  line-height: 1.45;
+}
+
+.alert svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #f4f2ec;
+  font-size: 14.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--ink-soft);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(244, 242, 236, 0.35);
+  border-top-color: #f4f2ec;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footerNote {
+  margin: 26px 0 0;
+  font-size: 13px;
+  color: var(--slate);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .brandPanel {
+    flex: none;
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .brandCopy {
+    margin-top: 22px;
+    max-width: none;
+  }
+
+  .brandHeadline {
+    font-size: 22px;
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .ledger {
+    display: none;
+  }
+
+  .formPanel {
+    padding: 36px 20px 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}

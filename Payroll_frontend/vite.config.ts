@@ -1,15 +1,14 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
       '/api': {
-        target: 'https://localhost:7123', // Reemplaza con el puerto real de tu API en C#
+        target: 'https://localhost:7289', // Puerto HTTPS activo en Visual Studio
         changeOrigin: true,
-        secure: false, // Permite certificados SSL autofirmados en entorno local
+        secure: false,
       },
     },
   },

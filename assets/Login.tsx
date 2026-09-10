@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api/axiosConfig';
-import styles from '../../public/Login.module.css';
+import styles from './Login.module.css';
 
 interface LoginProps {
   onLoginSuccess: (token: string) => void;

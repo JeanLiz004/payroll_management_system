@@ -16,7 +16,7 @@ import {
 } from "reactstrap";
 import Swal from "sweetalert2";
 import api from "../api/axiosConfig";
-import "../../public/Usuario.css";
+import "./Usuario.css";
 
 interface UsuarioModel {
   id: number;

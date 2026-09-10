@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api/axiosConfig';
-import styles from '../../public/Dashboard.module.css';
+import styles from './Dashboard.module.css';
 
 interface Empleado {
   id: number;
@@ -64,7 +64,7 @@ export const Dashboard: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nombreDebounced, deptoDebounced, filtroEstado]);
 
-  const hayFiltrosActivos = Boolean(filtroNombre || filtroDepto || filtroEstado !== 'todos');
+  const hayFiltrosActivos = filtroNombre || filtroDepto || filtroEstado !== 'todos';
 
   return (
     <div className={styles.page}>

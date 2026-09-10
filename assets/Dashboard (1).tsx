@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api/axiosConfig';
-import styles from '../../public/Dashboard.module.css';
+import styles from './Dashboard.module.css';
 
 interface Empleado {
   id: number;

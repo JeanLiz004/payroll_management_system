@@ -2,7 +2,8 @@ import axios from 'axios';
 import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 
 const api: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://localhost:7289/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  // withCredentials: false (No es necesario para JWT en Headers)
   headers: {
     'Content-Type': 'application/json',
   },
