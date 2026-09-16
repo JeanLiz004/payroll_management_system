@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string Category { get; set; } = string.Empty;
-        public string StatePower { get; set; } = string.Empty;
-        public string Sector { get; set; } = string.Empty;
+        public string RNC { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal DiscountPercentage { get; set; }
     }
 }

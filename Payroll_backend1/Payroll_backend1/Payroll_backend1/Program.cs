@@ -9,7 +9,9 @@ using SB.PayrollManagement.Infrastructure.Data;
 using Serilog;
 using System.Reflection;
 using SB.PayrollManagement.Infrastructure.Data.Seeders;
-using Microsoft.OpenApi.Models;
+using SB.PayrollManagement.Domain.Entities;
+using SB.PayrollManagement.Application.Interfaces;
+using SB.PayrollManagement.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,20 +28,22 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IGovernmentEntityService, GovernmentEntityService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 // 3. JWT Authentication Setup
-var jwtSecret = builder.Configuration["Jwt:Secret"] ?? "SuperSecretKeyForSBSuperintendenciaDeBancos2026!";
+var jwtKey = builder.Configuration["Jwt:Key"];
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "SB.PayrollManagement",
-            ValidAudience = "SB.PayrollUsers",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!)),
+            ValidateIssuer = false,
+            ValidateAudience = false
         };
     });
 
@@ -98,11 +102,13 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-    // 1. Asegurar la creación de tablas sin ejecutar scripts de migración conflictivos
+    // 1. Asegurar la creación de tablas
     context.Database.EnsureCreated();
 
     // 2. Ejecutar Seeders
     var excelPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "ListaEntidadesGubernamentales.xlsx");
+
+    // Puedes llamar a Seed (base) o a SeedGovernmentEntities (Excel)
     DatabaseSeeder.SeedGovernmentEntities(context, excelPath);
     TextFileSeeder.Seed(context);
 }

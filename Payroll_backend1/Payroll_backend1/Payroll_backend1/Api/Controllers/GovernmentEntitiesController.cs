@@ -1,39 +1,60 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SB.PayrollManagement.Application.DTOs;
+using SB.PayrollManagement.Application.Interfaces;
 using SB.PayrollManagement.Infrastructure.Data;
 
 namespace SB.PayrollManagement.Api.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class GovernmentEntitiesController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IGovernmentEntityService _service;
 
-        public GovernmentEntitiesController(AppDbContext context)
+        public GovernmentEntitiesController(IGovernmentEntityService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] string? search, [FromQuery] string? sector)
+        public async Task<IActionResult> GetAll([FromQuery] string? name)
         {
-            var query = _context.GovernmentEntities.AsQueryable();
+            var entities = await _service.GetAllAsync(name);
+            return Ok(entities);
+        }
 
-            if (!string.IsNullOrWhiteSpace(search))
-            {
-                query = query.Where(e => e.Name.Contains(search) || e.Category.Contains(search));
-            }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var entity = await _service.GetByIdAsync(id);
+            return entity is null ? NotFound(new { message = $"Entidad {id} no encontrada." }) : Ok(entity);
+        }
 
-            if (!string.IsNullOrWhiteSpace(sector))
-            {
-                query = query.Where(e => e.Sector == sector);
-            }
+        [HttpPost]
+        [Authorize(Roles = "Admin,Administrador")]
+        public async Task<IActionResult> Create([FromBody] GovernmentEntityDto dto)
+        {
+            var created = await _service.CreateAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
 
-            var result = await query.ToListAsync();
-            return Ok(result);
+        [HttpPut("{id:int}")]
+        [Authorize(Roles = "Admin,Administrador")]
+        public async Task<IActionResult> Update(int id, [FromBody] GovernmentEntityDto dto)
+        {
+            await _service.UpdateAsync(id, dto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin,Administrador")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

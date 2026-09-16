@@ -12,7 +12,6 @@ namespace SB.PayrollManagement.Domain.Entities
         public bool IsActive { get; set; } = true;
         public EmployeeType EmployeeType { get; set; }
 
-        // Specific Payroll Calculation Fields
         public decimal? WeeklySalary { get; set; }
         public decimal? HourlyRate { get; set; }
         public decimal? HoursWorked { get; set; }
@@ -23,28 +22,20 @@ namespace SB.PayrollManagement.Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-        /// <summary>
-        /// Calculates weekly payment according to payroll specification business rules.
-        /// </summary>
         public decimal CalculateWeeklyPay()
         {
             return EmployeeType switch
             {
-                EmployeeType.Salaried => WeeklySalary ?? 0m,
-                EmployeeType.Hourly => CalculateHourlyPay(HourlyRate ?? 0m, HoursWorked ?? 0m),
-                EmployeeType.Commission => (GrossSales ?? 0m) * (CommissionRate ?? 0m),
-                EmployeeType.SalariedCommission => ((GrossSales ?? 0m) * (CommissionRate ?? 0m)) + (BaseSalary ?? 0m) + ((BaseSalary ?? 0m) * 0.10m),
-                _ => throw new InvalidOperationException("Invalid employee type.")
+                EmployeeType.Salaried => WeeklySalary ?? 0,
+                EmployeeType.Hourly => (HoursWorked <= 40
+                    ? (HoursWorked ?? 0) * (HourlyRate ?? 0)
+                    : (40 * (HourlyRate ?? 0)) + (((HoursWorked ?? 0) - 40) * (HourlyRate ?? 0) * 1.5m)),
+                EmployeeType.Commission => (GrossSales ?? 0) * (CommissionRate ?? 0),
+                EmployeeType.BasePlusCommission => (BaseSalary ?? 0) + ((GrossSales ?? 0) * (CommissionRate ?? 0)),
+                _ => 0
             };
         }
-
-        private static decimal CalculateHourlyPay(decimal rate, decimal hours)
-        {
-            if (hours <= 40m)
-            {
-                return rate * hours;
-            }
-            return (rate * 40m) + (rate * 1.5m * (hours - 40m));
-        }
     }
+
+
 }

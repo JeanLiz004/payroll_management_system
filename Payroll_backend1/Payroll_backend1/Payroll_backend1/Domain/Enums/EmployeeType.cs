@@ -2,9 +2,10 @@
 {
     public enum EmployeeType
     {
-        Salaried = 1,
-        Hourly = 2,
-        Commission = 3,
-        SalariedCommission = 4
+        Salaried,
+        Hourly,
+        Commission,
+        BasePlusCommission,   // O SalariedCommission si prefieres usar ese nombre
+        SalariedCommission = BasePlusCommission // Alias para retrocompatibilidad con las pruebas
     }
 }
