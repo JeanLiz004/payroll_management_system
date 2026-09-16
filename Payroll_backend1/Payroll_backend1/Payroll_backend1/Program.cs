@@ -13,11 +13,6 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
 // 1. Serilog Logging Configuration
 Serilog.Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -26,11 +21,10 @@ Serilog.Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// 2. Local Text File / SQLite Database Setup
-var dbPath = Path.Combine(Directory.GetCurrentDirectory(), "Database", "payroll.db");
-Directory.CreateDirectory(Path.GetDirectoryName(dbPath)!);
+// 2. Base de Datos: Registrar ÚNICAMENTE SQL Server (Eliminar registro duplicado de SQLite)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite($"Data Source={dbPath}"));
+    options.UseSqlServer(connectionString));
 
 // 3. JWT Authentication Setup
 var jwtSecret = builder.Configuration["Jwt:Secret"] ?? "SuperSecretKeyForSBSuperintendenciaDeBancos2026!";
@@ -50,16 +44,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
-// 1. Agregar servicios de controladores
-// Reemplaza 'GovernmentEntitiesController' por una clase existente dentro del proyecto de la API/Controladores
+
+// 4. Servicios de Controladores y CORS
 builder.Services.AddControllers()
     .AddApplicationPart(typeof(SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController).Assembly);
-// 2. Configurar Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddEndpointsApiExplorer();
 
-// 4. Swagger Documentation
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
+
+
+// 5. Configuración de Swagger UI con Botón Authorize
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -68,7 +67,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
-    // 1. Definir el esquema de seguridad Bearer JWT
+    // Definir el esquema de seguridad Bearer JWT
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -85,29 +84,27 @@ builder.Services.AddSwaggerGen(c =>
     };
 
     c.AddSecurityDefinition("Bearer", securityScheme);
-
-    // 2. Aplicar el requerimiento de seguridad a todos los endpoints
+    //Aplicar el requerimiento de seguridad a todos los endpoints
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         { securityScheme, Array.Empty<string>() }
     });
 });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactApp",
-        policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-});
-
 var app = builder.Build();
 
+// 6. Siembra de Datos (Sin ejecutar Database.Migrate() al iniciar la app)
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    context.Database.Migrate();
 
+    // 1. Asegurar la creación de tablas sin ejecutar scripts de migración conflictivos
+    context.Database.EnsureCreated();
+
+    // 2. Ejecutar Seeders
     var excelPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "ListaEntidadesGubernamentales.xlsx");
     DatabaseSeeder.SeedGovernmentEntities(context, excelPath);
+    TextFileSeeder.Seed(context);
 }
 
 
@@ -117,19 +114,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Inicializar y sembrar datos en la base de datos
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    context.Database.Migrate(); // Asegura que la BD/tabla esté creada
-    TextFileSeeder.Seed(context); // Carga las entidades si la tabla está vacía
-}
 
 app.UseSerilogRequestLogging();
 app.UseCors("AllowReactApp");
-app.UseSwagger();
-app.UseSwaggerUI();
-
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

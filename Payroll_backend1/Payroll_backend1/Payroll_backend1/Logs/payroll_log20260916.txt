@@ -1,0 +1,67 @@
+2026-09-16 09:27:53.814 -04:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:27:54.121 -04:00 [INF] Executed DbCommand (138ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:27:54.239 -04:00 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:27:56.329 -04:00 [INF] Executed DbCommand (1,305ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-09-16 09:27:56.337 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:27:56.346 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:27:56.366 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-16 09:27:56.409 -04:00 [INF] Applying migration '20260912050139_AddGovernmentEntities'.
+2026-09-16 09:27:57.069 -04:00 [INF] Executed DbCommand (208ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+CREATE TABLE [GovernmentEntities] (
+    [Id] INTEGER NOT NULL,
+    [Name] TEXT NOT NULL,
+    [Category] TEXT NOT NULL,
+    [StatePower] TEXT NOT NULL,
+    [Sector] TEXT NOT NULL,
+    CONSTRAINT [PK_GovernmentEntities] PRIMARY KEY ([Id])
+);
+2026-09-16 09:27:57.186 -04:00 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260912050139_AddGovernmentEntities', N'8.0.0');
+2026-09-16 09:27:57.207 -04:00 [INF] Applying migration '20260914020511_InitialCreate'.
+2026-09-16 09:35:38.097 -04:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:35:38.435 -04:00 [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:35:38.491 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:35:38.514 -04:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:35:38.900 -04:00 [INF] Executed DbCommand (292ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-16 09:35:39.043 -04:00 [INF] Applying migration '20260914020511_InitialCreate'.
+2026-09-16 09:40:39.279 -04:00 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GovernmentEntities] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-16 09:40:39.469 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:40:39.498 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:40:39.503 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT 1
+2026-09-16 09:40:39.507 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-16 09:40:39.555 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-16 09:40:39.587 -04:00 [INF] Applying migration '20260914020511_InitialCreate'.

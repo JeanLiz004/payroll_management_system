@@ -11,8 +11,8 @@ using SB.PayrollManagement.Infrastructure.Data;
 namespace SB.PayrollManagement.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260913022256_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260914032436_InitialClean")]
+    partial class InitialClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
