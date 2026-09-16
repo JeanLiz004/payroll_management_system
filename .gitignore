@@ -1,2 +1,14 @@
 .vs/
 Payroll_backend/Payroll_backend/appsettings.json
+Payroll_backend1/Payroll_backend1/appsettings.json
+
+# Archivos de configuración con secretos locales
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.json
+
+# Archivos de usuarios de Visual Studio y carpetas de compilación
+bin/
+obj/
+*.user
+*.suo
