@@ -180,3 +180,4 @@ C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payrol
 C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1\obj\Debug\net8.0\SB.PayrollManagement.pdb
 C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1\obj\Debug\net8.0\SB.PayrollManagement.genruntimeconfig.cache
 C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1\obj\Debug\net8.0\ref\SB.PayrollManagement.dll
+C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1\bin\Debug\net8.0\Newtonsoft.Json.dll

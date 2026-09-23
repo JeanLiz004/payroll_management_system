@@ -31,7 +31,7 @@ namespace SB.PayrollManagement.Domain.Entities
                     ? (HoursWorked ?? 0) * (HourlyRate ?? 0)
                     : (40 * (HourlyRate ?? 0)) + (((HoursWorked ?? 0) - 40) * (HourlyRate ?? 0) * 1.5m)),
                 EmployeeType.Commission => (GrossSales ?? 0) * (CommissionRate ?? 0),
-                EmployeeType.BasePlusCommission => (BaseSalary ?? 0) + ((GrossSales ?? 0) * (CommissionRate ?? 0)),
+               EmployeeType.BasePlusCommission => ((BaseSalary ?? 0) * 1.10m) + ((GrossSales ?? 0) * (CommissionRate ?? 0)),
                 _ => 0
             };
         }

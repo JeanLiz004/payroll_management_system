@@ -26,7 +26,8 @@ builder.Host.UseSerilog();
 // 2. Base de Datos: Registrar ÚNICAMENTE SQL Server (Eliminar registro duplicado de SQLite)
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString, sqlOptions =>
+        sqlOptions.CommandTimeout(60)));
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IGovernmentEntityService, GovernmentEntityService>();

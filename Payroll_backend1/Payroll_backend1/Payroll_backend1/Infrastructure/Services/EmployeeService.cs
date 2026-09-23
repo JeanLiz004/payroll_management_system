@@ -97,6 +97,11 @@ namespace SB.PayrollManagement.Infrastructure.Services
 
         private static EmployeeDto MapToDto(Employee emp)
         {
+
+            // Si prefieres usar la entidad directamente:
+            decimal earnings = emp.CalculateWeeklyPay();
+
+            /* O si mantienes la lógica en el Mapper:
             decimal earnings = emp.EmployeeType switch
             {
                 EmployeeType.Salaried => emp.WeeklySalary ?? 0,
@@ -107,6 +112,8 @@ namespace SB.PayrollManagement.Infrastructure.Services
                 EmployeeType.BasePlusCommission => (emp.BaseSalary ?? 0) + ((emp.GrossSales ?? 0) * (emp.CommissionRate ?? 0)),
                 _ => 0
             };
+            */
+
 
             return new EmployeeDto
             {
