@@ -4,41 +4,40 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { MainLayout } from '../components/layout/MainLayout';
 import { Login } from '../features/auth/components/Login';
 import { EmployeesPage } from '../features/employees/pages/EmployeesPage';
-import { EmployeeForm } from '../features/employees/components/EmployeeForm';
-import { employeeApi } from '../features/employees/services/employeeApi';
-import { useNavigate } from 'react-router-dom';
-
-// Wrapper para el formulario de creación
-const CreateEmployeePage: React.FC = () => {
-  const navigate = useNavigate();
-  return (
-    <EmployeeForm
-      onSubmit={async (dto) => {
-        await employeeApi.create(dto);
-        navigate('/employees');
-      }}
-    />
-  );
-};
+import { CreateEmployeePage } from '../features/employees/pages/CreateEmployeePage';
+import { EditEmployeePage } from '../features/employees/pages/EditEmployeePage';
+import { PayrollPage } from '../features/PayrollPage';
+import { GovernmentEntitiesPage } from '../features/GovernmentEntitiesPage';
+import { UsersPage } from '../features/UsersPage';
+import { PayrollReportPage } from '../features/PayrollReportPage';
 
 export const AppRouter: React.FC = () => {
   return (
     <Routes>
-      {/* Rutas Públicas */}
+      {/* Ruta Pública */}
       <Route path="/login" element={<Login />} />
 
-      {/* Rutas Protegidas que requieren JWT */}
+      {/* Rutas Autenticadas Generales */}
       <Route element={<ProtectedRoute />}>
         <Route element={<MainLayout />}>
           <Route path="/employees" element={<EmployeesPage />} />
           <Route path="/employees/new" element={<CreateEmployeePage />} />
-          
-          {/* Redirección por defecto para rutas protegidas */}
+          <Route path="/employees/edit/:id" element={<EditEmployeePage />} />
+          <Route path="/payroll" element={<PayrollPage />} />
+          <Route path="/reports" element={<PayrollReportPage />} />
+
+          {/* Rutas Exclusivas para Administradores */}
+          <Route element={<ProtectedRoute allowedRoles={['Admin']} />}>
+            <Route path="/government-entities" element={<GovernmentEntitiesPage />} />
+            <Route path="/users" element={<UsersPage />} />
+          </Route>
+
+          {/* Redirección por defecto */}
           <Route path="/" element={<Navigate to="/employees" replace />} />
         </Route>
       </Route>
 
-      {/* Ruta por defecto para URLs no encontradas */}
+      {/* Fallback */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );

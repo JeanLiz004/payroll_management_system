@@ -1,37 +1,64 @@
-import React, { useState } from 'react';
-import { EmployeeType, CreateEmployeeDto } from '../types/employee.types';
+import React, { useState, useEffect } from 'react';
+import { EmployeeType } from '../types/employee.types';
+import type { CreateEmployeeDto, Employee } from '../types/employee.types';
 
 interface EmployeeFormProps {
-  initialValues?: Partial<CreateEmployeeDto>;
+  initialValues?: Partial<CreateEmployeeDto> | Employee;
+  initialData?: Employee; // Prop adicional para compatibilidad con EditEmployeePage
   onSubmit: (data: CreateEmployeeDto) => Promise<void>;
   isLoading?: boolean;
 }
 
 export const EmployeeForm: React.FC<EmployeeFormProps> = ({
   initialValues,
+  initialData,
   onSubmit,
   isLoading = false,
 }) => {
+  // Tomar el valor inicial de initialData o initialValues
+  const data = initialData || initialValues;
+
   const [formData, setFormData] = useState<CreateEmployeeDto>({
-    firstName: initialValues?.firstName || '',
-    lastName: initialValues?.lastName || '',
-    socialSecurityNumber: initialValues?.socialSecurityNumber || '',
-    department: initialValues?.department || '',
-    isActive: initialValues?.isActive ?? true,
-    employeeType: initialValues?.employeeType ?? EmployeeType.Salaried,
-    weeklySalary: initialValues?.weeklySalary || 0,
-    hourlyRate: initialValues?.hourlyRate || 0,
-    hoursWorked: initialValues?.hoursWorked || 0,
-    grossSales: initialValues?.grossSales || 0,
-    commissionRate: initialValues?.commissionRate || 0,
-    baseSalary: initialValues?.baseSalary || 0,
+    firstName: data?.firstName || '',
+    lastName: data?.lastName || '',
+    socialSecurityNumber: data?.socialSecurityNumber || '',
+    department: data?.department || '',
+    isActive: data?.isActive ?? true,
+    employeeType: data?.employeeType ?? EmployeeType.Salaried,
+    weeklySalary: data?.weeklySalary || 0,
+    hourlyRate: data?.hourlyRate || 0,
+    hoursWorked: data?.hoursWorked || 0,
+    grossSales: data?.grossSales || 0,
+    commissionRate: data?.commissionRate || 0,
+    baseSalary: data?.baseSalary || 0,
   });
+
+  // Sincronizar el formulario cuando los datos se cargan desde la API (asíncrono)
+  useEffect(() => {
+    const currentData = initialData || initialValues;
+    if (currentData) {
+      setFormData({
+        firstName: currentData.firstName || '',
+        lastName: currentData.lastName || '',
+        socialSecurityNumber: currentData.socialSecurityNumber || '',
+        department: currentData.department || '',
+        isActive: currentData.isActive ?? true,
+        employeeType: currentData.employeeType ?? EmployeeType.Salaried,
+        weeklySalary: currentData.weeklySalary || 0,
+        hourlyRate: currentData.hourlyRate || 0,
+        hoursWorked: currentData.hoursWorked || 0,
+        grossSales: currentData.grossSales || 0,
+        commissionRate: currentData.commissionRate || 0,
+        baseSalary: currentData.baseSalary || 0,
+      });
+    }
+  }, [initialData, initialValues]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-    
+
     setFormData((prev) => ({
       ...prev,
       [name]:
@@ -59,7 +86,7 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto p-6 bg-white shadow rounded-lg">
       <h2 className="text-xl font-bold text-gray-800">
-        {initialValues ? 'Editar Empleado' : 'Registrar Nuevo Empleado'}
+        {data ? 'Editar Empleado' : 'Registrar Nuevo Empleado'}
       </h2>
 
       {/* Datos Personales Base */}
@@ -212,7 +239,7 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
           </div>
         )}
 
-        {/* 3 - Base + Comisión (Aplica el 10% de bono sobre la base en backend) */}
+        {/* 3 - Base + Comisión */}
         {formData.employeeType === EmployeeType.BasePlusCommission && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>

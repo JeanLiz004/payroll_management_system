@@ -1,36 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EmployeeList } from '../components/EmployeeList';
-import { employeeApi } from '../services/employeeApi';
-import { Employee } from '../types/employee.types';
+import { useEmployees } from '../hooks/useEmployees';
+import type { Employee } from '../types/employee.types';
 
 export const EmployeesPage: React.FC = () => {
-  const [employees, setEmployees] = useState<Employee[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-
-  const fetchEmployees = async () => {
-    setIsLoading(true);
-    try {
-      const data = await employeeApi.getAll();
-      setEmployees(data);
-    } catch (err: any) {
-      setError('Error al cargar la lista de empleados.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchEmployees();
-  }, []);
+  const { employees, isLoading, isError, deleteEmployee } = useEmployees();
 
   const handleDelete = async (id: number) => {
     if (confirm('¿Estás seguro de que deseas eliminar este empleado?')) {
       try {
-        await employeeApi.delete(id);
-        setEmployees((prev) => prev.filter((emp) => emp.id !== id));
+        await deleteEmployee(id);
       } catch (err) {
         alert('No se pudo eliminar el empleado.');
       }
@@ -53,9 +34,9 @@ export const EmployeesPage: React.FC = () => {
         </button>
       </div>
 
-      {error && (
+      {isError && (
         <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-md">
-          {error}
+          Ocurrió un error al cargar la lista de empleados desde la API.
         </div>
       )}
 

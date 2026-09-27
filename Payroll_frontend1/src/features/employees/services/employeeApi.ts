@@ -1,5 +1,5 @@
 import { apiClient } from '../../../services/apiClient';
-import { Employee, CreateEmployeeDto } from '../types/employee.types';
+import type { Employee, CreateEmployeeDto } from '../types/employee.types';
 
 export const employeeApi = {
   getAll: async (params?: { name?: string; department?: string; active?: boolean }) => {

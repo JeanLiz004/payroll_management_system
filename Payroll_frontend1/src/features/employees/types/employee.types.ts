@@ -1,9 +1,11 @@
-export enum EmployeeType {
-  Salaried = 0,
-  Hourly = 1,
-  Commission = 2,
-  BasePlusCommission = 3,
-}
+export const EmployeeType = {
+  Salaried: 0,
+  Hourly: 1,
+  Commission: 2,
+  BasePlusCommission: 3,
+} as const;
+
+export type EmployeeType = (typeof EmployeeType)[keyof typeof EmployeeType];
 
 export interface Employee {
   id: number;
