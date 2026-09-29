@@ -4,6 +4,7 @@ import type {
   CreateGovernmentEntityDto,
   User,
   CreateUserDto,
+  UpdateUserDto,
   PayrollReportFilter,
   PayrollReportItem,
 } from '../types/management.types';
@@ -40,6 +41,11 @@ export const managementService = {
     return data;
   },
 
+  updateUser: async (id: number, dto: UpdateUserDto): Promise<User> => {
+    const { data } = await apiClient.put<User>(`/Users/${id}`, dto);
+    return data;
+  },
+  
   deleteUser: async (id: number): Promise<void> => {
     await apiClient.delete(`/Users/${id}`);
   },

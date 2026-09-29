@@ -3,6 +3,7 @@ import { managementService } from '../services/managementService';
 import type {
   CreateGovernmentEntityDto,
   CreateUserDto,
+  UpdateUserDto,
   PayrollReportFilter,
 } from '../types/management.types';
 
@@ -59,6 +60,12 @@ export const useUsers = () => {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: MANAGEMENT_KEYS.users }),
   });
 
+  const updateUserMutation = useMutation({
+    mutationFn: ({ id, dto }: { id: number; dto: UpdateUserDto }) =>
+      managementService.updateUser(id, dto),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: MANAGEMENT_KEYS.users }),
+  });
+
   const deleteUserMutation = useMutation({
     mutationFn: (id: number) => managementService.deleteUser(id),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: MANAGEMENT_KEYS.users }),
@@ -69,6 +76,7 @@ export const useUsers = () => {
     isLoading: usersQuery.isLoading,
     isError: usersQuery.isError,
     createUser: createUserMutation.mutateAsync,
+    updateUser: updateUserMutation.mutateAsync,
     deleteUser: deleteUserMutation.mutateAsync,
   };
 };

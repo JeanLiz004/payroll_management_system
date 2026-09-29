@@ -25,8 +25,13 @@ export interface User {
 
 export interface CreateUserDto {
   username: string;
-  email: string;
   password?: string;
+  role: string;
+}
+
+export interface UpdateUserDto {
+  username: string;
+  password?: string; // Optional during updates so password isn't overwritten if left blank
   role: string;
 }
 
