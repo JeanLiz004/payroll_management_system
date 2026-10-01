@@ -1,0 +1,1157 @@
+2026-09-30 02:57:45.185 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - null null
+2026-09-30 02:57:45.327 -04:00 [INF] CORS policy execution successful.
+2026-09-30 02:57:45.381 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-30 02:57:45.388 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-30 02:57:45.390 -04:00 [INF] HTTP GET /api/Reports/payroll responded 401 in 66.7469 ms
+2026-09-30 02:57:45.397 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - 401 0 null 219.4523ms
+2026-09-30 02:57:54.901 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - null null
+2026-09-30 02:57:54.906 -04:00 [INF] CORS policy execution successful.
+2026-09-30 02:57:54.908 -04:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 2.7118 ms
+2026-09-30 02:57:54.912 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - 204 null null 10.945ms
+2026-09-30 02:57:54.925 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7016/api/Auth/login - application/json 43
+2026-09-30 02:57:54.930 -04:00 [INF] CORS policy execution successful.
+2026-09-30 02:57:54.937 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 02:57:54.957 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SB.PayrollManagement.Application.DTOs.LoginDto) on controller SB.PayrollManagement.Api.Controllers.AuthController (SB.PayrollManagement).
+2026-09-30 02:57:55.283 -04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__model_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__model_Username_0
+2026-09-30 02:57:55.320 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 02:57:55.326 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement) in 363.6784ms
+2026-09-30 02:57:55.329 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 02:57:55.331 -04:00 [INF] HTTP POST /api/Auth/login responded 200 in 401.9409 ms
+2026-09-30 02:57:55.335 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7016/api/Auth/login - 200 null application/json; charset=utf-8 410.3727ms
+2026-09-30 02:57:55.377 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 02:57:55.394 -04:00 [INF] CORS policy execution successful.
+2026-09-30 02:57:55.398 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 4.4195 ms
+2026-09-30 02:57:55.404 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 27.2591ms
+2026-09-30 02:57:55.409 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 02:57:55.415 -04:00 [INF] CORS policy execution successful.
+2026-09-30 02:57:55.424 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 02:57:55.427 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 02:57:55.443 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 02:57:55.453 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+2026-09-30 03:41:50.551 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=&endDate= - null null
+2026-09-30 03:41:51.195 -04:00 [INF] CORS policy execution successful.
+2026-09-30 03:41:51.229 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 38.3040 ms
+2026-09-30 03:41:51.261 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=&endDate= - 204 null null 725.3691ms
+2026-09-30 03:41:51.344 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - null null
+2026-09-30 03:41:51.379 -04:00 [INF] CORS policy execution successful.
+2026-09-30 03:41:51.511 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 03:41:51.527 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 03:41:53.605 -04:00 [INF] Executed DbCommand (353ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 03:41:53.652 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 03:41:53.702 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 2169.959ms
+2026-09-30 03:41:53.704 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 03:41:53.708 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 2328.2106 ms
+2026-09-30 03:41:53.710 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - 200 null application/json; charset=utf-8 2366.5668ms
+2026-09-30 03:42:00.511 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 03:42:00.545 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 34.2328ms
+2026-09-30 09:52:45.022 -04:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+2026-09-30 09:52:45.618 -04:00 [INF] Executed DbCommand (365ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-09-30 09:52:46.638 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 09:52:46.668 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GovernmentEntities] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 09:52:46.676 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 09:52:47.074 -04:00 [INF] User profile is available. Using 'C:\Users\User Name\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 09:52:48.203 -04:00 [INF] Now listening on: https://localhost:7016
+2026-09-30 09:52:48.207 -04:00 [INF] Now listening on: http://localhost:5184
+2026-09-30 09:52:48.215 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 09:52:48.218 -04:00 [INF] Hosting environment: Development
+2026-09-30 09:52:48.220 -04:00 [INF] Content root path: C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1
+2026-09-30 09:52:56.874 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2026-09-30 09:53:04.097 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 8173.3318ms
+2026-09-30 09:53:05.452 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2026-09-30 09:53:05.452 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 09:53:05.476 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 24.0369ms
+2026-09-30 09:53:05.655 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 203.6836ms
+2026-09-30 09:53:10.706 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2026-09-30 09:53:11.143 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 436.7949ms
+2026-09-30 10:00:49.368 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 10:00:49.389 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:00:49.402 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 15.6661 ms
+2026-09-30 10:00:49.406 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 37.7371ms
+2026-09-30 10:00:49.419 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 10:00:49.438 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:00:49.791 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:00:49.855 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 10:00:50.389 -04:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 10:00:50.656 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 10:00:50.721 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 854.1502ms
+2026-09-30 10:00:50.724 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:00:50.729 -04:00 [INF] HTTP GET /api/Employees responded 200 in 1293.1523 ms
+2026-09-30 10:00:50.741 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 1322.4512ms
+2026-09-30 10:00:52.896 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=&endDate= - null null
+2026-09-30 10:00:52.901 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:00:52.902 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.7535 ms
+2026-09-30 10:00:52.906 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=&endDate= - 204 null null 9.1167ms
+2026-09-30 10:00:52.911 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - null null
+2026-09-30 10:00:52.916 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:00:52.924 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:00:52.937 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:00:53.286 -04:00 [INF] Executed DbCommand (71ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:00:53.301 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:00:53.326 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 385.3061ms
+2026-09-30 10:00:53.329 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:00:53.336 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 420.5387 ms
+2026-09-30 10:00:53.342 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=&endDate= - 200 null application/json; charset=utf-8 431.0397ms
+2026-09-30 10:03:40.400 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate= - null null
+2026-09-30 10:03:40.415 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:03:40.417 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.6231 ms
+2026-09-30 10:03:40.421 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate= - 204 null null 21.247ms
+2026-09-30 10:03:40.429 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate= - null null
+2026-09-30 10:03:40.443 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:03:40.453 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:03:40.456 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:03:40.480 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:03:40.487 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:03:40.491 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 30.0913ms
+2026-09-30 10:03:40.495 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:03:40.497 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 54.2911 ms
+2026-09-30 10:03:40.503 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate= - 200 null application/json; charset=utf-8 71.6782ms
+2026-09-30 10:03:44.582 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-09 - null null
+2026-09-30 10:03:44.588 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:03:44.589 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.5308 ms
+2026-09-30 10:03:44.593 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-09 - 204 null null 11.7429ms
+2026-09-30 10:03:44.600 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-09 - null null
+2026-09-30 10:03:44.606 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:03:44.609 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:03:44.612 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:03:44.624 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:03:44.633 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:03:44.638 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 19.5741ms
+2026-09-30 10:03:44.640 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:03:44.642 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 35.6467 ms
+2026-09-30 10:03:44.649 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-09 - 200 null application/json; charset=utf-8 48.9329ms
+2026-09-30 10:03:59.963 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-10-09 - null null
+2026-09-30 10:03:59.978 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:03:59.981 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.6777 ms
+2026-09-30 10:03:59.984 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-10-09 - 204 null null 21.5122ms
+2026-09-30 10:04:00.000 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-10-09 - null null
+2026-09-30 10:04:00.132 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:04:00.134 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:00.137 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:04:00.165 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:04:00.178 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:04:00.182 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 36.6896ms
+2026-09-30 10:04:00.184 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:00.186 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 54.2465 ms
+2026-09-30 10:04:00.190 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-10-09 - 200 null application/json; charset=utf-8 189.9357ms
+2026-09-30 10:04:06.593 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:04:06.598 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:04:06.600 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.0932 ms
+2026-09-30 10:04:06.603 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 204 null null 10.7371ms
+2026-09-30 10:04:06.608 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:04:06.614 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:04:06.617 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:06.619 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:04:06.629 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:04:06.635 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:04:06.640 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 17.704ms
+2026-09-30 10:04:06.642 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:06.645 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 30.7726 ms
+2026-09-30 10:04:06.649 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 200 null application/json; charset=utf-8 41.1703ms
+2026-09-30 10:04:08.534 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:04:08.539 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:04:08.541 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:08.544 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:04:08.556 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:04:08.563 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:04:08.569 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 20.2264ms
+2026-09-30 10:04:08.572 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:08.574 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 34.9127 ms
+2026-09-30 10:04:08.578 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 200 null application/json; charset=utf-8 44.2612ms
+2026-09-30 10:04:09.247 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:04:09.254 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:04:09.263 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:09.267 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:04:09.279 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:04:09.286 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:04:09.291 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 18.439ms
+2026-09-30 10:04:09.295 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:04:09.297 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 43.6166 ms
+2026-09-30 10:04:09.302 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 200 null application/json; charset=utf-8 55.4664ms
+2026-09-30 10:09:49.437 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:09:49.891 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:09:49.903 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 13.0978 ms
+2026-09-30 10:09:49.907 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 204 null null 540.6162ms
+2026-09-30 10:09:49.928 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - null null
+2026-09-30 10:09:49.939 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:09:49.952 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:09:49.957 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:09:50.112 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:09:50.119 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:09:50.126 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 163.6665ms
+2026-09-30 10:09:50.130 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:09:50.132 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 194.0049 ms
+2026-09-30 10:09:50.135 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-01-30&endDate=2026-09-30 - 200 null application/json; charset=utf-8 206.8211ms
+2026-09-30 10:09:53.032 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:09:53.101 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:09:53.105 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 4.6557 ms
+2026-09-30 10:09:53.108 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 75.9672ms
+2026-09-30 10:09:53.124 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:09:53.127 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:09:53.129 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:09:53.130 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:09:53.139 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:09:53.145 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:09:53.151 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 17.3193ms
+2026-09-30 10:09:53.156 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:09:53.158 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 31.2299 ms
+2026-09-30 10:09:53.161 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 37.4453ms
+2026-09-30 10:10:24.052 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7016/api/Auth/login - application/json 52
+2026-09-30 10:10:24.058 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:10:24.060 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 10:10:24.085 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SB.PayrollManagement.Application.DTOs.LoginDto) on controller SB.PayrollManagement.Api.Controllers.AuthController (SB.PayrollManagement).
+2026-09-30 10:10:24.278 -04:00 [INF] Executed DbCommand (34ms) [Parameters=[@__model_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__model_Username_0
+2026-09-30 10:10:24.349 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:10:24.355 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement) in 266.6329ms
+2026-09-30 10:10:24.358 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 10:10:24.360 -04:00 [INF] HTTP POST /api/Auth/login responded 200 in 302.2127 ms
+2026-09-30 10:10:24.370 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7016/api/Auth/login - 200 null application/json; charset=utf-8 317.8424ms
+2026-09-30 10:10:43.641 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:10:43.648 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:10:43.652 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:10:43.665 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:10:43.674 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:10:43.681 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 24.8809ms
+2026-09-30 10:10:43.683 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:10:43.686 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 38.7425 ms
+2026-09-30 10:10:43.690 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 49.8934ms
+2026-09-30 10:14:53.549 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:14:53.576 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:14:53.581 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 9.4461 ms
+2026-09-30 10:14:53.593 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 44.2481ms
+2026-09-30 10:14:53.602 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:14:53.615 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:14:53.617 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:14:53.619 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:14:53.629 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:14:53.716 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:14:53.764 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 140.5405ms
+2026-09-30 10:14:53.783 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:14:53.787 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 172.1555 ms
+2026-09-30 10:14:53.795 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 193.2591ms
+2026-09-30 10:15:00.006 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 10:15:00.010 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:00.014 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 4.1607 ms
+2026-09-30 10:15:00.037 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 31.1321ms
+2026-09-30 10:15:00.042 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 10:15:00.051 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:00.053 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:00.056 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 10:15:00.069 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 10:15:00.083 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 10:15:00.086 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 26.4668ms
+2026-09-30 10:15:00.088 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:00.090 -04:00 [INF] HTTP GET /api/Employees responded 200 in 39.5453 ms
+2026-09-30 10:15:00.095 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 52.3387ms
+2026-09-30 10:15:08.982 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:15:08.987 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:08.988 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.5983 ms
+2026-09-30 10:15:08.992 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 10.5368ms
+2026-09-30 10:15:08.999 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:15:09.008 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:09.010 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:15:09.013 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:15:09.024 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:15:09.037 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:15:09.041 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 23.3219ms
+2026-09-30 10:15:09.044 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:15:09.048 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 40.0611 ms
+2026-09-30 10:15:09.053 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 54.0586ms
+2026-09-30 10:15:12.777 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 10:15:12.780 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:12.781 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:15:12.783 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 10:15:12.799 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 10:15:12.809 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 10:15:12.813 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 26.056ms
+2026-09-30 10:15:12.816 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 10:15:12.818 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 38.6892 ms
+2026-09-30 10:15:12.826 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 49.3955ms
+2026-09-30 10:15:18.892 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 10:15:18.897 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:18.899 -04:00 [INF] HTTP OPTIONS /api/GovernmentEntities responded 204 in 1.6814 ms
+2026-09-30 10:15:18.903 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - 204 null null 11.2217ms
+2026-09-30 10:15:18.909 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 10:15:18.916 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:18.919 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:18.928 -04:00 [INF] Route matched with {action = "GetAll", controller = "GovernmentEntities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String) on controller SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController (SB.PayrollManagement).
+2026-09-30 10:15:18.987 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[Name], [g].[RNC], [g].[Description], [g].[DiscountPercentage]
+FROM [GovernmentEntities] AS [g]
+2026-09-30 10:15:18.992 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.GovernmentEntityDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 10:15:19.000 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement) in 67.9942ms
+2026-09-30 10:15:19.003 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:19.006 -04:00 [INF] HTTP GET /api/GovernmentEntities responded 200 in 89.7861 ms
+2026-09-30 10:15:19.010 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/GovernmentEntities - 200 null application/json; charset=utf-8 101.2794ms
+2026-09-30 10:15:20.207 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users - null null
+2026-09-30 10:15:20.216 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:20.217 -04:00 [INF] HTTP OPTIONS /api/Users responded 204 in 1.3305 ms
+2026-09-30 10:15:20.220 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users - 204 null null 12.6985ms
+2026-09-30 10:15:20.232 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Users - null null
+2026-09-30 10:15:20.242 -04:00 [INF] CORS policy execution successful.
+2026-09-30 10:15:20.250 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:20.256 -04:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 10:15:20.272 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [u].[Id], [u].[Username], [u].[Role]
+FROM [Users] AS [u]
+2026-09-30 10:15:20.280 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.UserDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 10:15:20.285 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement) in 24.4804ms
+2026-09-30 10:15:20.287 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 10:15:20.289 -04:00 [INF] HTTP GET /api/Users responded 200 in 46.6513 ms
+2026-09-30 10:15:20.297 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Users - 200 null application/json; charset=utf-8 64.8395ms
+2026-09-30 11:28:23.796 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:28:23.824 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:23.837 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 13.4245 ms
+2026-09-30 11:28:23.842 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 89.9148ms
+2026-09-30 11:28:29.777 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:28:29.804 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:29.898 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-30 11:28:29.958 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-30 11:28:29.960 -04:00 [INF] HTTP GET /api/Reports/payroll responded 401 in 163.1585 ms
+2026-09-30 11:28:29.965 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 401 0 null 187.7555ms
+2026-09-30 11:28:40.517 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - null null
+2026-09-30 11:28:40.521 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:40.523 -04:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 1.7990 ms
+2026-09-30 11:28:40.528 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - 204 null null 10.9684ms
+2026-09-30 11:28:40.533 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7016/api/Auth/login - application/json 43
+2026-09-30 11:28:40.537 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:40.540 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 11:28:40.551 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SB.PayrollManagement.Application.DTOs.LoginDto) on controller SB.PayrollManagement.Api.Controllers.AuthController (SB.PayrollManagement).
+2026-09-30 11:28:40.765 -04:00 [INF] Executed DbCommand (22ms) [Parameters=[@__model_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__model_Username_0
+2026-09-30 11:28:40.783 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 11:28:40.787 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement) in 230.7086ms
+2026-09-30 11:28:40.790 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 11:28:40.791 -04:00 [INF] HTTP POST /api/Auth/login responded 200 in 254.6481 ms
+2026-09-30 11:28:40.795 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7016/api/Auth/login - 200 null application/json; charset=utf-8 262.0716ms
+2026-09-30 11:28:40.835 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 11:28:40.840 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:40.841 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 1.3899 ms
+2026-09-30 11:28:40.864 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 28.9231ms
+2026-09-30 11:28:40.868 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 11:28:40.875 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:28:40.883 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:28:40.886 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 11:28:40.897 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 11:28:40.906 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 11:28:40.913 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 23.8463ms
+2026-09-30 11:28:40.916 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:28:40.919 -04:00 [INF] HTTP GET /api/Employees responded 200 in 43.5239 ms
+2026-09-30 11:28:40.922 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 53.5704ms
+2026-09-30 11:38:53.088 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 11:38:53.104 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:38:53.105 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 1.3376 ms
+2026-09-30 11:38:53.115 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 27.8739ms
+2026-09-30 11:38:54.418 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 11:38:54.423 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:38:54.427 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:38:54.430 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 11:38:54.595 -04:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 11:38:54.602 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 11:38:54.610 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 175.6824ms
+2026-09-30 11:38:54.615 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:38:54.617 -04:00 [INF] HTTP GET /api/Employees responded 200 in 193.9833 ms
+2026-09-30 11:38:54.622 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 203.8388ms
+2026-09-30 11:39:00.215 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:39:00.224 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:00.225 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.2861 ms
+2026-09-30 11:39:00.228 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 14.1012ms
+2026-09-30 11:39:00.235 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:39:00.241 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:00.243 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 11:39:00.251 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 11:39:00.271 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 11:39:00.277 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 11:39:00.281 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 25.5632ms
+2026-09-30 11:39:00.285 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 11:39:00.288 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 46.7269 ms
+2026-09-30 11:39:00.291 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 56.8562ms
+2026-09-30 11:39:01.186 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 11:39:01.192 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:01.194 -04:00 [INF] HTTP OPTIONS /api/GovernmentEntities responded 204 in 1.6307 ms
+2026-09-30 11:39:01.201 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - 204 null null 15.3683ms
+2026-09-30 11:39:01.207 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 11:39:01.215 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:01.217 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:39:01.222 -04:00 [INF] Route matched with {action = "GetAll", controller = "GovernmentEntities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String) on controller SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController (SB.PayrollManagement).
+2026-09-30 11:39:01.306 -04:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[Name], [g].[RNC], [g].[Description], [g].[DiscountPercentage]
+FROM [GovernmentEntities] AS [g]
+2026-09-30 11:39:01.314 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.GovernmentEntityDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 11:39:01.325 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement) in 97.0133ms
+2026-09-30 11:39:01.332 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:39:01.335 -04:00 [INF] HTTP GET /api/GovernmentEntities responded 200 in 120.2300 ms
+2026-09-30 11:39:01.340 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/GovernmentEntities - 200 null application/json; charset=utf-8 132.7096ms
+2026-09-30 11:39:02.157 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users - null null
+2026-09-30 11:39:02.166 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:02.169 -04:00 [INF] HTTP OPTIONS /api/Users responded 204 in 2.5802 ms
+2026-09-30 11:39:02.173 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users - 204 null null 15.9648ms
+2026-09-30 11:39:02.185 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Users - null null
+2026-09-30 11:39:02.202 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:02.204 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:39:02.208 -04:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 11:39:02.274 -04:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [u].[Id], [u].[Username], [u].[Role]
+FROM [Users] AS [u]
+2026-09-30 11:39:02.280 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.UserDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 11:39:02.286 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement) in 74.5158ms
+2026-09-30 11:39:02.308 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 11:39:02.310 -04:00 [INF] HTTP GET /api/Users responded 200 in 108.2835 ms
+2026-09-30 11:39:02.314 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Users - 200 null application/json; charset=utf-8 129.0417ms
+2026-09-30 11:39:03.083 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:39:03.089 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:39:03.091 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 11:39:03.099 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 11:39:03.124 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 11:39:03.134 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 11:39:03.137 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 34.5247ms
+2026-09-30 11:39:03.140 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 11:39:03.142 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 53.7533 ms
+2026-09-30 11:39:03.146 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 63.2652ms
+2026-09-30 11:47:30.377 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 11:47:30.410 -04:00 [INF] CORS policy execution successful.
+2026-09-30 11:47:30.414 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 7.5363 ms
+2026-09-30 11:47:30.425 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 94.2854ms
+2026-09-30 14:44:42.437 -04:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+2026-09-30 14:44:43.388 -04:00 [INF] Executed DbCommand (837ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-09-30 14:44:44.179 -04:00 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 14:44:44.546 -04:00 [INF] Executed DbCommand (340ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GovernmentEntities] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 14:44:44.570 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 14:44:45.142 -04:00 [INF] User profile is available. Using 'C:\Users\User Name\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 14:44:45.857 -04:00 [INF] Now listening on: https://localhost:7016
+2026-09-30 14:44:45.860 -04:00 [INF] Now listening on: http://localhost:5184
+2026-09-30 14:44:45.867 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 14:44:45.871 -04:00 [INF] Hosting environment: Development
+2026-09-30 14:44:45.873 -04:00 [INF] Content root path: C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1
+2026-09-30 14:44:50.575 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2026-09-30 14:44:51.750 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 1196.5671ms
+2026-09-30 14:44:53.102 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 14:44:53.198 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2026-09-30 14:44:53.217 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 114.8495ms
+2026-09-30 14:44:53.366 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 168.0437ms
+2026-09-30 14:44:53.552 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2026-09-30 14:44:53.933 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 381.9096ms
+2026-09-30 14:45:41.003 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 14:45:41.035 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:45:41.045 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 20.6395 ms
+2026-09-30 14:45:41.049 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 46.5974ms
+2026-09-30 14:45:41.063 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 14:45:41.084 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:45:41.430 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 14:45:41.504 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 14:45:41.846 -04:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 14:45:43.682 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 14:45:43.732 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 2217.7995ms
+2026-09-30 14:45:43.737 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 14:45:43.747 -04:00 [INF] HTTP GET /api/Employees responded 200 in 2664.1543 ms
+2026-09-30 14:45:43.756 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 2695.3728ms
+2026-09-30 14:45:55.257 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:45:55.272 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:45:55.273 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.1231 ms
+2026-09-30 14:45:55.276 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 18.9398ms
+2026-09-30 14:45:55.281 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:45:55.286 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:45:55.295 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:45:55.307 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 14:45:55.594 -04:00 [INF] Executed DbCommand (53ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 14:45:55.609 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:45:55.629 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 317.6492ms
+2026-09-30 14:45:55.633 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:45:55.635 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 348.4855 ms
+2026-09-30 14:45:55.638 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 356.7829ms
+2026-09-30 14:46:04.127 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll/2/pdf - null null
+2026-09-30 14:46:04.134 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:04.136 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll/2/pdf responded 204 in 2.3438 ms
+2026-09-30 14:46:04.143 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll/2/pdf - 204 null null 17.5039ms
+2026-09-30 14:46:04.149 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - null null
+2026-09-30 14:46:04.159 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:04.165 -04:00 [INF] HTTP GET /api/Reports/payroll/2/pdf responded 404 in 5.8113 ms
+2026-09-30 14:46:04.171 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - 404 0 null 21.9711ms
+2026-09-30 14:46:04.178 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/api/Reports/payroll/2/pdf, Response status code: 404
+2026-09-30 14:46:04.843 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - null null
+2026-09-30 14:46:04.850 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:04.852 -04:00 [INF] HTTP GET /api/Reports/payroll/2/pdf responded 404 in 1.9641 ms
+2026-09-30 14:46:04.856 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - 404 0 null 12.822ms
+2026-09-30 14:46:04.861 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/api/Reports/payroll/2/pdf, Response status code: 404
+2026-09-30 14:46:06.986 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:46:06.990 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:06.992 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.3768 ms
+2026-09-30 14:46:06.995 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 9.6932ms
+2026-09-30 14:46:07.000 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:46:07.005 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:07.009 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:46:07.012 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 14:46:07.032 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 14:46:07.039 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:46:07.042 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 23.5692ms
+2026-09-30 14:46:07.045 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:46:07.050 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 45.4290 ms
+2026-09-30 14:46:07.055 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 56.0892ms
+2026-09-30 14:46:07.743 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:46:07.749 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:46:07.751 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:46:07.754 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 14:46:07.759 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 14:46:07.766 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:46:07.769 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 13.3217ms
+2026-09-30 14:46:07.772 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:46:07.774 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 24.9105 ms
+2026-09-30 14:46:07.776 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 34.0375ms
+2026-09-30 14:47:17.647 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:47:17.668 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:17.670 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.6378 ms
+2026-09-30 14:47:17.673 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 27.1179ms
+2026-09-30 14:47:17.679 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:47:17.684 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:17.686 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:47:17.689 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 14:47:17.699 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 14:47:17.709 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:47:17.713 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 20.2209ms
+2026-09-30 14:47:17.715 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:47:17.718 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 34.1775 ms
+2026-09-30 14:47:17.721 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 43.0356ms
+2026-09-30 14:47:20.001 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 14:47:20.005 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:20.007 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:47:20.010 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 14:47:20.022 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 14:47:20.029 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 14:47:20.033 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 18.1017ms
+2026-09-30 14:47:20.036 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 14:47:20.039 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 33.4312 ms
+2026-09-30 14:47:20.042 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 41.6727ms
+2026-09-30 14:47:22.218 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll/2/pdf - null null
+2026-09-30 14:47:22.223 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:22.225 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll/2/pdf responded 204 in 1.7959 ms
+2026-09-30 14:47:22.230 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll/2/pdf - 204 null null 12.3143ms
+2026-09-30 14:47:22.235 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - null null
+2026-09-30 14:47:22.242 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:22.246 -04:00 [INF] HTTP GET /api/Reports/payroll/2/pdf responded 404 in 3.5905 ms
+2026-09-30 14:47:22.250 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll/2/pdf - 404 0 null 15.3015ms
+2026-09-30 14:47:22.255 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7016/api/Reports/payroll/2/pdf, Response status code: 404
+2026-09-30 14:47:23.936 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 14:47:23.942 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:23.945 -04:00 [INF] HTTP OPTIONS /api/GovernmentEntities responded 204 in 2.5957 ms
+2026-09-30 14:47:23.948 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - 204 null null 12.3789ms
+2026-09-30 14:47:23.958 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 14:47:23.965 -04:00 [INF] CORS policy execution successful.
+2026-09-30 14:47:23.966 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 14:47:23.976 -04:00 [INF] Route matched with {action = "GetAll", controller = "GovernmentEntities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String) on controller SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController (SB.PayrollManagement).
+2026-09-30 14:47:24.028 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[Name], [g].[RNC], [g].[Description], [g].[DiscountPercentage]
+FROM [GovernmentEntities] AS [g]
+2026-09-30 14:47:24.035 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.GovernmentEntityDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 14:47:24.040 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement) in 58.1916ms
+2026-09-30 14:47:24.042 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 14:47:24.044 -04:00 [INF] HTTP GET /api/GovernmentEntities responded 200 in 79.7308 ms
+2026-09-30 14:47:24.049 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/GovernmentEntities - 200 null application/json; charset=utf-8 91.1967ms
+2026-09-30 16:42:56.837 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 16:42:56.874 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:42:56.879 -04:00 [INF] HTTP OPTIONS /api/GovernmentEntities responded 204 in 6.9825 ms
+2026-09-30 16:42:56.895 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - 204 null null 98.3273ms
+2026-09-30 16:42:58.216 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 16:42:58.242 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:42:58.270 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:42:58.285 -04:00 [INF] Route matched with {action = "GetAll", controller = "GovernmentEntities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String) on controller SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController (SB.PayrollManagement).
+2026-09-30 16:42:58.546 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[Name], [g].[RNC], [g].[Description], [g].[DiscountPercentage]
+FROM [GovernmentEntities] AS [g]
+2026-09-30 16:42:58.555 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.GovernmentEntityDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:42:58.561 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement) in 272.2323ms
+2026-09-30 16:42:58.583 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:42:58.586 -04:00 [INF] HTTP GET /api/GovernmentEntities responded 200 in 343.6622 ms
+2026-09-30 16:42:58.589 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/GovernmentEntities - 200 null application/json; charset=utf-8 372.8228ms
+2026-09-30 16:43:00.621 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 16:43:00.627 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:00.629 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 2.4004 ms
+2026-09-30 16:43:00.632 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 10.9555ms
+2026-09-30 16:43:00.637 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 16:43:00.642 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:00.644 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:00.646 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 16:43:00.667 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 16:43:00.682 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:43:00.685 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 35.541ms
+2026-09-30 16:43:00.687 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:00.691 -04:00 [INF] HTTP GET /api/Employees responded 200 in 48.3536 ms
+2026-09-30 16:43:00.694 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 57.5996ms
+2026-09-30 16:43:05.208 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users - null null
+2026-09-30 16:43:05.226 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:05.228 -04:00 [INF] HTTP OPTIONS /api/Users responded 204 in 1.3999 ms
+2026-09-30 16:43:05.233 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users - 204 null null 24.2743ms
+2026-09-30 16:43:05.238 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Users - null null
+2026-09-30 16:43:05.242 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:05.288 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:05.359 -04:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 16:43:05.466 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [u].[Id], [u].[Username], [u].[Role]
+FROM [Users] AS [u]
+2026-09-30 16:43:05.474 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.UserDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:43:05.520 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement) in 156.9629ms
+2026-09-30 16:43:05.526 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:05.528 -04:00 [INF] HTTP GET /api/Users responded 200 in 285.3805 ms
+2026-09-30 16:43:05.531 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Users - 200 null application/json; charset=utf-8 292.781ms
+2026-09-30 16:43:15.192 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users/3 - null null
+2026-09-30 16:43:15.200 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:15.207 -04:00 [INF] HTTP OPTIONS /api/Users/3 responded 204 in 8.6228 ms
+2026-09-30 16:43:15.209 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users/3 - 204 null null 17.4372ms
+2026-09-30 16:43:15.233 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7016/api/Users/3 - application/json 54
+2026-09-30 16:43:15.269 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:15.274 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.Update (SB.PayrollManagement)'
+2026-09-30 16:43:15.306 -04:00 [INF] Route matched with {action = "Update", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, SB.PayrollManagement.Application.DTOs.CreateUserDto) on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 16:43:15.514 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-09-30 16:43:15.678 -04:00 [INF] Executed DbCommand (31ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [Password] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-09-30 16:43:15.698 -04:00 [INF] Usuario 3 actualizado por admin
+2026-09-30 16:43:15.704 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-09-30 16:43:15.705 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.Update (SB.PayrollManagement) in 396.8742ms
+2026-09-30 16:43:15.707 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.Update (SB.PayrollManagement)'
+2026-09-30 16:43:15.709 -04:00 [INF] HTTP PUT /api/Users/3 responded 204 in 440.0704 ms
+2026-09-30 16:43:15.712 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7016/api/Users/3 - 204 null null 478.5533ms
+2026-09-30 16:43:15.722 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users - null null
+2026-09-30 16:43:15.725 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:15.726 -04:00 [INF] HTTP OPTIONS /api/Users responded 204 in 1.2146 ms
+2026-09-30 16:43:15.729 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users - 204 null null 7.5864ms
+2026-09-30 16:43:15.734 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Users - null null
+2026-09-30 16:43:15.737 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:15.738 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:15.740 -04:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 16:43:15.747 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [u].[Id], [u].[Username], [u].[Role]
+FROM [Users] AS [u]
+2026-09-30 16:43:15.751 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.UserDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 16:43:15.753 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement) in 10.2315ms
+2026-09-30 16:43:15.756 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 16:43:15.757 -04:00 [INF] HTTP GET /api/Users responded 200 in 20.4373 ms
+2026-09-30 16:43:15.760 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Users - 200 null application/json; charset=utf-8 26.7317ms
+2026-09-30 16:43:24.192 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - null null
+2026-09-30 16:43:24.196 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:24.197 -04:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 1.0936 ms
+2026-09-30 16:43:24.200 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - 204 null null 8.6843ms
+2026-09-30 16:43:24.205 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7016/api/Auth/login - application/json 40
+2026-09-30 16:43:24.209 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:24.211 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 16:43:24.220 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SB.PayrollManagement.Application.DTOs.LoginDto) on controller SB.PayrollManagement.Api.Controllers.AuthController (SB.PayrollManagement).
+2026-09-30 16:43:24.243 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__model_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__model_Username_0
+2026-09-30 16:43:24.276 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:24.281 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement) in 58.311ms
+2026-09-30 16:43:24.284 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 16:43:24.291 -04:00 [INF] HTTP POST /api/Auth/login responded 200 in 82.3759 ms
+2026-09-30 16:43:24.294 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7016/api/Auth/login - 200 null application/json; charset=utf-8 89.1523ms
+2026-09-30 16:43:28.805 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 16:43:28.811 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:28.813 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.0111 ms
+2026-09-30 16:43:28.816 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 11.5764ms
+2026-09-30 16:43:28.821 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 16:43:28.825 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:28.827 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:28.829 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:28.837 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:28.843 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:28.848 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 15.6122ms
+2026-09-30 16:43:28.851 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:28.853 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 27.2778 ms
+2026-09-30 16:43:28.855 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 34.6327ms
+2026-09-30 16:43:29.750 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 16:43:29.754 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:29.757 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:29.760 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:29.767 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:29.777 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:29.791 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 28.278ms
+2026-09-30 16:43:29.796 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:29.798 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 43.9729 ms
+2026-09-30 16:43:29.801 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 51.2129ms
+2026-09-30 16:43:47.664 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-16 - null null
+2026-09-30 16:43:47.668 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:47.670 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.5553 ms
+2026-09-30 16:43:47.672 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-16 - 204 null null 8.6503ms
+2026-09-30 16:43:47.679 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-16 - null null
+2026-09-30 16:43:47.684 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:47.686 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:47.689 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:47.699 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:47.705 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:47.709 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 14.539ms
+2026-09-30 16:43:47.712 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:47.716 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 32.6763 ms
+2026-09-30 16:43:47.719 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-16 - 200 null application/json; charset=utf-8 40.2758ms
+2026-09-30 16:43:50.155 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-16&endDate=2026-10-02 - null null
+2026-09-30 16:43:50.160 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:50.162 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.5026 ms
+2026-09-30 16:43:50.166 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-16&endDate=2026-10-02 - 204 null null 10.9144ms
+2026-09-30 16:43:50.171 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-16&endDate=2026-10-02 - null null
+2026-09-30 16:43:50.180 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:50.182 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:50.184 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:50.191 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:50.196 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:50.199 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 11.5163ms
+2026-09-30 16:43:50.201 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:50.205 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 24.2869 ms
+2026-09-30 16:43:50.207 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-16&endDate=2026-10-02 - 200 null application/json; charset=utf-8 36.5199ms
+2026-09-30 16:43:56.023 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-02 - null null
+2026-09-30 16:43:56.032 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:56.033 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.5912 ms
+2026-09-30 16:43:56.036 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-02 - 204 null null 12.9758ms
+2026-09-30 16:43:56.042 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-02 - null null
+2026-09-30 16:43:56.047 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:56.050 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:56.051 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:56.057 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:56.063 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:56.067 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 12.3267ms
+2026-09-30 16:43:56.070 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:56.073 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 25.1084 ms
+2026-09-30 16:43:56.077 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-10-02 - 200 null application/json; charset=utf-8 35.9283ms
+2026-09-30 16:43:58.923 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - null null
+2026-09-30 16:43:58.929 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:58.931 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.6675 ms
+2026-09-30 16:43:58.935 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - 204 null null 11.6071ms
+2026-09-30 16:43:58.942 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - null null
+2026-09-30 16:43:58.952 -04:00 [INF] CORS policy execution successful.
+2026-09-30 16:43:58.955 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:58.958 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 16:43:58.965 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 16:43:58.972 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 16:43:58.976 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 13.3531ms
+2026-09-30 16:43:58.978 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 16:43:58.980 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 28.2253 ms
+2026-09-30 16:43:58.983 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - 200 null application/json; charset=utf-8 41.3747ms
+2026-09-30 17:52:26.129 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - null null
+2026-09-30 17:52:26.343 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 17:52:26.472 -04:00 [INF] CORS policy execution successful.
+2026-09-30 17:52:26.472 -04:00 [INF] CORS policy execution successful.
+2026-09-30 17:52:26.480 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 9.2569 ms
+2026-09-30 17:52:26.490 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 11.4595 ms
+2026-09-30 17:52:26.500 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll?startDate=2026-09-30&endDate=2026-09-30 - 204 null null 391.9681ms
+2026-09-30 17:52:26.497 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 152.8831ms
+2026-09-30 17:52:26.520 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 17:52:26.535 -04:00 [INF] CORS policy execution successful.
+2026-09-30 17:52:26.575 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 17:52:26.595 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 17:52:27.051 -04:00 [INF] Executed DbCommand (27ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 17:52:27.094 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 17:52:27.125 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 522.1536ms
+2026-09-30 17:52:27.127 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 17:52:27.133 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 598.8350 ms
+2026-09-30 17:52:27.141 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 621.3678ms
+2026-09-30 17:52:29.138 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 17:52:29.166 -04:00 [INF] CORS policy execution successful.
+2026-09-30 17:52:29.169 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 3.1827 ms
+2026-09-30 17:52:29.172 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 34.27ms
+2026-09-30 17:52:29.185 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 17:52:29.203 -04:00 [INF] CORS policy execution successful.
+2026-09-30 17:52:29.205 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 17:52:29.208 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 17:52:29.236 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 17:52:29.246 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 17:52:29.251 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 38.6089ms
+2026-09-30 17:52:29.262 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 17:52:29.270 -04:00 [INF] HTTP GET /api/Employees responded 200 in 66.6263 ms
+2026-09-30 17:52:29.298 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 113.0205ms
+2026-09-30 18:22:57.862 -04:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+2026-09-30 18:22:58.250 -04:00 [INF] Executed DbCommand (239ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-09-30 18:22:59.254 -04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:22:59.284 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GovernmentEntities] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:22:59.290 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:22:59.765 -04:00 [INF] User profile is available. Using 'C:\Users\User Name\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 18:23:01.486 -04:00 [INF] Now listening on: https://localhost:7016
+2026-09-30 18:23:01.489 -04:00 [INF] Now listening on: http://localhost:5184
+2026-09-30 18:23:01.498 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 18:23:01.501 -04:00 [INF] Hosting environment: Development
+2026-09-30 18:23:01.504 -04:00 [INF] Content root path: C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1
+2026-09-30 18:23:06.493 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger - null null
+2026-09-30 18:23:08.808 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger - 301 0 null 2376.4751ms
+2026-09-30 18:23:08.874 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2026-09-30 18:23:09.364 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 491.2151ms
+2026-09-30 18:23:10.002 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-30 18:23:09.969 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - null null
+2026-09-30 18:23:10.001 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - null null
+2026-09-30 18:23:14.534 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 18:23:14.536 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2026-09-30 18:23:14.628 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 18:23:14.728 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-30 18:23:14.624 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 65.7987ms
+2026-09-30 18:23:16.342 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui.css - 200 143943 text/css 6373.5723ms
+2026-09-30 18:23:16.394 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-30 18:23:16.241 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 1613.0932ms
+2026-09-30 18:23:16.242 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-30 18:23:16.424 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 6423.5148ms
+2026-09-30 18:23:16.424 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1888.068ms
+2026-09-30 18:23:16.443 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 6441.1281ms
+2026-09-30 18:23:17.592 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2026-09-30 18:23:18.738 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1217.5177ms
+2026-09-30 18:23:49.817 -04:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+2026-09-30 18:23:50.182 -04:00 [INF] Executed DbCommand (217ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-09-30 18:23:50.966 -04:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:23:51.089 -04:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [GovernmentEntities] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:23:51.100 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-09-30 18:23:51.586 -04:00 [INF] User profile is available. Using 'C:\Users\User Name\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-30 18:23:52.265 -04:00 [INF] Now listening on: https://localhost:7016
+2026-09-30 18:23:52.269 -04:00 [INF] Now listening on: http://localhost:5184
+2026-09-30 18:23:52.277 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-30 18:23:52.280 -04:00 [INF] Hosting environment: Development
+2026-09-30 18:23:52.282 -04:00 [INF] Content root path: C:\Users\User Name\Desktop\Programas y páginas web\Csharp\Payroll_system\Payroll_backend1\Payroll_backend1\Payroll_backend1
+2026-09-30 18:23:54.900 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/index.html - null null
+2026-09-30 18:23:56.072 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/index.html - 200 null text/html;charset=utf-8 1185.6576ms
+2026-09-30 18:23:57.070 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-30 18:23:57.070 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/_vs/browserLink - null null
+2026-09-30 18:23:57.148 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_framework/aspnetcore-browser-refresh.js - 200 13776 application/javascript; charset=utf-8 74.8825ms
+2026-09-30 18:23:57.423 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/_vs/browserLink - 200 null text/javascript; charset=UTF-8 353.7367ms
+2026-09-30 18:23:57.569 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - null null
+2026-09-30 18:23:58.100 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 532.0519ms
+2026-09-30 18:25:24.843 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Employees - null null
+2026-09-30 18:25:24.866 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:24.876 -04:00 [INF] HTTP OPTIONS /api/Employees responded 204 in 14.5882 ms
+2026-09-30 18:25:24.880 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Employees - 204 null null 36.7829ms
+2026-09-30 18:25:24.889 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Employees - null null
+2026-09-30 18:25:24.899 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:25.261 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:25.343 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.Nullable`1[System.Boolean]) on controller SB.PayrollManagement.Api.Controllers.EmployeesController (SB.PayrollManagement).
+2026-09-30 18:25:25.698 -04:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+2026-09-30 18:25:25.952 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SB.PayrollManagement.Domain.Entities.Employee, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 18:25:26.006 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement) in 648.8669ms
+2026-09-30 18:25:26.011 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.EmployeesController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:26.016 -04:00 [INF] HTTP GET /api/Employees responded 200 in 1118.0537 ms
+2026-09-30 18:25:26.047 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Employees - 200 null application/json; charset=utf-8 1158.5595ms
+2026-09-30 18:25:39.508 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - null null
+2026-09-30 18:25:39.515 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:39.517 -04:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 2.1374 ms
+2026-09-30 18:25:39.520 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Auth/login - 204 null null 11.9532ms
+2026-09-30 18:25:39.534 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7016/api/Auth/login - application/json 43
+2026-09-30 18:25:39.544 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:39.548 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 18:25:39.562 -04:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SB.PayrollManagement.Application.DTOs.LoginDto) on controller SB.PayrollManagement.Api.Controllers.AuthController (SB.PayrollManagement).
+2026-09-30 18:25:39.906 -04:00 [INF] Executed DbCommand (68ms) [Parameters=[@__model_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__model_Username_0
+2026-09-30 18:25:39.945 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 18:25:39.956 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement) in 389.2007ms
+2026-09-30 18:25:39.959 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.AuthController.Login (SB.PayrollManagement)'
+2026-09-30 18:25:39.961 -04:00 [INF] HTTP POST /api/Auth/login responded 200 in 417.6933 ms
+2026-09-30 18:25:39.966 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7016/api/Auth/login - 200 null application/json; charset=utf-8 431.951ms
+2026-09-30 18:25:44.179 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 18:25:44.185 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:44.187 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 2.4973 ms
+2026-09-30 18:25:44.191 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 11.4229ms
+2026-09-30 18:25:44.196 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 18:25:44.203 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:44.215 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 18:25:44.226 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 18:25:44.257 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 18:25:44.273 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 18:25:44.292 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 61.3157ms
+2026-09-30 18:25:44.295 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 18:25:44.298 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 94.5028 ms
+2026-09-30 18:25:44.301 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 104.5211ms
+2026-09-30 18:25:44.936 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 18:25:45.844 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Users - null null
+2026-09-30 18:25:45.860 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:45.864 -04:00 [INF] HTTP OPTIONS /api/GovernmentEntities responded 204 in 4.2750 ms
+2026-09-30 18:25:45.863 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:45.870 -04:00 [INF] HTTP OPTIONS /api/Users responded 204 in 6.4025 ms
+2026-09-30 18:25:45.869 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/GovernmentEntities - 204 null null 933.0395ms
+2026-09-30 18:25:45.873 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Users - 204 null null 29.8247ms
+2026-09-30 18:25:45.882 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/GovernmentEntities - null null
+2026-09-30 18:25:45.887 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Users - null null
+2026-09-30 18:25:45.900 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:45.897 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:45.906 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:45.907 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:45.914 -04:00 [INF] Route matched with {action = "GetAll", controller = "GovernmentEntities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String) on controller SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController (SB.PayrollManagement).
+2026-09-30 18:25:45.914 -04:00 [INF] Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SB.PayrollManagement.Api.Controllers.UsersController (SB.PayrollManagement).
+2026-09-30 18:25:45.959 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [u].[Id], [u].[Username], [u].[Role]
+FROM [Users] AS [u]
+2026-09-30 18:25:45.974 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.UserDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 18:25:45.982 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement) in 61.5977ms
+2026-09-30 18:25:45.985 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.UsersController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:45.985 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[Name], [g].[RNC], [g].[Description], [g].[DiscountPercentage]
+FROM [GovernmentEntities] AS [g]
+2026-09-30 18:25:45.987 -04:00 [INF] HTTP GET /api/Users responded 200 in 86.2734 ms
+2026-09-30 18:25:45.992 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.GovernmentEntityDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-30 18:25:45.993 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Users - 200 null application/json; charset=utf-8 108.7348ms
+2026-09-30 18:25:46.000 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement) in 82.9295ms
+2026-09-30 18:25:46.009 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.GovernmentEntitiesController.GetAll (SB.PayrollManagement)'
+2026-09-30 18:25:46.011 -04:00 [INF] HTTP GET /api/GovernmentEntities responded 200 in 114.1062 ms
+2026-09-30 18:25:46.014 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/GovernmentEntities - 200 null application/json; charset=utf-8 131.5792ms
+2026-09-30 18:25:49.789 -04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 18:25:49.795 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:49.796 -04:00 [INF] HTTP OPTIONS /api/Reports/payroll responded 204 in 1.7986 ms
+2026-09-30 18:25:49.800 -04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7016/api/Reports/payroll - 204 null null 11.3076ms
+2026-09-30 18:25:49.816 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7016/api/Reports/payroll - null null
+2026-09-30 18:25:49.833 -04:00 [INF] CORS policy execution successful.
+2026-09-30 18:25:49.837 -04:00 [INF] Executing endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 18:25:49.841 -04:00 [INF] Route matched with {action = "GetPayrollReport", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPayrollReport() on controller SB.PayrollManagement.Api.Controllers.ReportsController (SB.PayrollManagement).
+2026-09-30 18:25:49.856 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__active_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='60']
+SELECT [e].[Id], [e].[BaseSalary], [e].[CommissionRate], [e].[CreatedAt], [e].[Department], [e].[EmployeeType], [e].[FirstName], [e].[GrossSales], [e].[HourlyRate], [e].[HoursWorked], [e].[IsActive], [e].[LastName], [e].[SocialSecurityNumber], [e].[UpdatedAt], [e].[WeeklySalary]
+FROM [Employees] AS [e]
+WHERE [e].[IsActive] = @__active_Value_0
+2026-09-30 18:25:49.863 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`4[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SB.PayrollManagement.Application.DTOs.EmployeeDto, SB.PayrollManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-30 18:25:49.867 -04:00 [INF] Executed action SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement) in 22.8467ms
+2026-09-30 18:25:49.870 -04:00 [INF] Executed endpoint 'SB.PayrollManagement.Api.Controllers.ReportsController.GetPayrollReport (SB.PayrollManagement)'
+2026-09-30 18:25:49.872 -04:00 [INF] HTTP GET /api/Reports/payroll responded 200 in 39.2932 ms
+2026-09-30 18:25:49.876 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7016/api/Reports/payroll - 200 null application/json; charset=utf-8 59.8561ms

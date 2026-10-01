@@ -82,8 +82,18 @@ export const useUsers = () => {
 };
 
 export const usePayrollReport = (filter?: PayrollReportFilter) => {
-  return useQuery({
+  const query = useQuery({
     queryKey: MANAGEMENT_KEYS.reports(filter),
     queryFn: () => managementService.getPayrollReport(filter),
   });
+
+  return {
+    reportData: query.data,
+    employees: query.data?.employees ?? [],
+    totalEmployees: query.data?.totalEmployees ?? 0,
+    totalPayrollAmount: query.data?.totalPayrollAmount ?? 0,
+    isLoading: query.isLoading,
+    isError: query.isError,
+    refetch: query.refetch,
+  };
 };

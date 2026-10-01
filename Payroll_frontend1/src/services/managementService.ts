@@ -6,7 +6,7 @@ import type {
   CreateUserDto,
   UpdateUserDto,
   PayrollReportFilter,
-  PayrollReportItem,
+  PayrollReportResponse,
 } from '../types/management.types';
 
 export const managementService = {
@@ -51,8 +51,14 @@ export const managementService = {
   },
 
   // Reports
-  getPayrollReport: async (filter?: PayrollReportFilter): Promise<PayrollReportItem[]> => {
-    const { data } = await apiClient.get<PayrollReportItem[]>('/Reports/payroll', { params: filter });
+ getPayrollReport: async (filter?: PayrollReportFilter): Promise<PayrollReportResponse> => {
+    const params: Record<string, string | number> = {};
+    if (filter?.startDate) params.startDate = filter.startDate;
+    if (filter?.endDate) params.endDate = filter.endDate;
+    if (filter?.departmentId) params.departmentId = filter.departmentId;
+    if (filter?.employeeId) params.employeeId = filter.employeeId;
+
+    const { data } = await apiClient.get<PayrollReportResponse>('/Reports/payroll', { params });
     return data;
   },
 };
